@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bipin Xeetri - Portfolio</title>
+    <link rel="icon" href="king.jpg">
+    <style>
+        /* General Styles */
+        body {
+            background-image: image(url(download.jpg));
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('download.jpg') no-repeat center center fixed;
+            background-size: cover;
+            background-color: #121212;
+            color: #fff;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        header {
+            background-color: #1a1a1a;
+            padding: 20px;
+            border-bottom: 2px solid #00ff99; /* Neon border */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #00ff99; /* Neon Green */
+            text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99, 0 0 30px #00ff99;
+        }
+        h2 {
+            font-size: 2em;
+            margin-top: 20px;
+            color: #ff00ff; /* Neon Pink */
+            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+        }
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+            color: #b3b3b3;
+        }
+        .container {
+            padding: 20px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #00ff99; /* Neon Green */
+            color: #000;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            text-shadow: 0 0 10px #00ff99;
+        }
+        .btn:hover {
+            background-color: #ff00ff; /* Neon Pink */
+            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+        }
+
+        /* Profile Image */
+        .profile-img-container {
+            margin-top: 50px;
+        }
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: url('kin.jpg') no-repeat center center;
+            background-size: cover;
+            border: 5px solid #00ff99;
+            margin: 0 auto;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 30px #00ff99, 0 0 50px #00ff99;
+        }
+
+        /* About Section */
+        .about-section {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #1a1a1a;
+            border-radius: 8px;
+            border: 2px solid #ff00ff;
+        }
+
+        /* Projects Section */
+        .projects-section {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #2c2c2c;
+            border-radius: 8px;
+            border: 2px solid #00ff99;
+        }
+        .project-card {
+            background-color: #333;
+            border-radius: 8px;
+            margin: 10px;
+            padding: 15px;
+            text-align: left;
+            box-shadow: 0 0 15px #00ff99;
+            transition: transform 0.3s ease;
+        }
+        .project-card h3 {
+            color: #00ff99;
+            text-shadow: 0 0 10px #00ff99;
+        }
+        .project-card p {
+            color: #fff;
+            font-size: 1.1em;
+        }
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px #ff00ff;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #1a1a1a;
+            border-radius: 8px;
+            border: 2px solid #00ff99;
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #1a1a1a;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+
+        nav a {
+            color: #00ff99;
+            text-decoration: none;
+            font-size: 1.2em;
+            text-shadow: 0 0 10px #00ff99;
+            margin: 0 10px;
+        }
+
+        nav a:hover {
+            color: #ff00ff;
+            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+        }
+
+        nav h1 {
+            margin: 0;
+            font-size: 1.5em;
+            color: #00ff99;
+            text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99;
+        }
+
+        nav div {
+            display: flex;
+            align-items: center;
+        }
+        .about-section {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    border: 2px solid #ff00ff;
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+#typed-text {
+    font-size: 1.2em;
+    color: #b3b3b3;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid #ff00ff; /* Cursor effect */
+    display: inline-block;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+            <h1>Bipin Xeetri</h1>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="profile-img-container">
+            <div class="profile-img"></div>
+        </div>
+        <div id="about" class="about-section">
+            <h2>About Me</h2>
+            <p id="typed-text"></p>
+        </div>
+        
+        <div id="projects" class="projects-section">
+            <h2>Projects</h2>
+            <div class="project-card">
+                <h3>Game Engine Development</h3>
+                <p>Developed a custom game engine supporting both 2D and 3D game development, optimized for performance and user-friendliness.</p>
+            </div>
+            <div class="project-card">
+                <h3>Virtual Reality Game</h3>
+                <p>Created an immersive VR game for Oculus Rift, focusing on puzzle-solving within a 3D environment, receiving acclaim for innovative gameplay.</p>
+            </div>
+        </div>
+
+        <div id="contact" class="contact-section">
+            <h2>Contact</h2>
+            <p>Feel free to reach out to me:</p>
+            <a href="mailto:bipinxeetri@example.com" class="btn">Email Me</a>
+            <a href="https://www.facebook.com/bipinxeetri" class="btn">Facebook</a>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for additional functionality
+
+        // Smooth scroll effect for navigation links
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                window.scrollTo({
+                    top: targetSection.offsetTop - 50, // Offset for fixed navbar
+                    behavior: 'smooth'
+                });
+            });
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+    const text = "Hi, I am Bipin Xeetri, a passionate Game Developer with expertise in creating immersive and engaging gaming experiences. With a strong foundation in game mechanics, development, and design, I strive to push the boundaries of interactive entertainment.";
+    const typedTextElement = document.getElementById('typed-text');
+    let index = 0;
+
+    function typeWriter() {
+        // Clear the text and restart the typing effect after finishing one cycle
+        if (index === text.length) {
+            typedTextElement.innerHTML = ''; // Reset the text
+            index = 0; // Reset the index
+        }
+
+        if (index < text.length) {
+            typedTextElement.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(typeWriter, 100); // Adjust speed of typing
+        }
+    }
+
+    typeWriter(); // Call the typing function initially
+});
+
+
+    </script>
+</body>
+</html>
