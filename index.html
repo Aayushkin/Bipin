@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aayush-Tech07 | Managed by Bipin</title>
+    <link rel="icon" href="king.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #232526 0%, #414345 100%);
+            min-height: 100vh;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 40px;
+            background: rgba(20, 20, 30, 0.85);
+            box-shadow: 0 2px 16px rgba(0,0,0,0.15);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(8px);
+        }
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            background: linear-gradient(90deg, #00ff99, #3b82f6 70%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 2px;
+        }
+        .subtitle {
+            font-size: 1rem;
+            color: #b3b3b3;
+            margin-left: 10px;
+            font-weight: 500;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 32px;
+        }
+        .nav-links li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.2s;
+            position: relative;
+        }
+        .nav-links li a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #00ff99, #3b82f6);
+            transition: width 0.3s;
+            margin: 0 auto;
+        }
+        .nav-links li a:hover {
+            color: #00ff99;
+        }
+        .nav-links li a:hover::after {
+            width: 100%;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .hamburger span {
+            background: #fff;
+            height: 4px;
+            width: 28px;
+            margin: 4px 0;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+        @media (max-width: 900px) {
+            .navbar {
+                padding: 14px 18px;
+            }
+            .nav-links {
+                gap: 18px;
+            }
+        }
+        @media (max-width: 700px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background: rgba(20, 20, 30, 0.97);
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100vw;
+                padding: 30px 0;
+                text-align: center;
+                z-index: 200;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .hamburger {
+                display: flex;
+            }
+        }
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            min-height: 60vh;
+            padding: 60px 0 30px 0;
+            gap: 40px;
+        }
+        .hero-content {
+            max-width: 500px;
+            text-align: left;
+            animation: fadeIn 1.2s;
+        }
+        .hero-content h1 {
+            font-size: 2.7rem;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            background: linear-gradient(90deg, #00ff99, #3b82f6 80%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-content h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #b3b3b3;
+            margin: 0 0 18px 0;
+        }
+        .hero-content p {
+            font-size: 1.1rem;
+            color: #e0e0e0;
+            margin-bottom: 24px;
+        }
+        .hero-img {
+            min-width: 220px;
+            max-width: 260px;
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 8px 32px #00ff9955, 0 2px 8px #0008;
+            border: 4px solid #00ff99;
+            background: rgba(255,255,255,0.04);
+            animation: float 3s ease-in-out infinite;
+        }
+        .hero-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0);}
+            50% { transform: translateY(-18px);}
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        /* Glassmorphism Section */
+        .section {
+            background: rgba(30, 30, 40, 0.7);
+            border-radius: 18px;
+            box-shadow: 0 8px 32px #00ff9933, 0 2px 8px #0005;
+            border: 1.5px solid #00ff99;
+            margin: 32px auto;
+            padding: 36px 28px;
+            max-width: 700px;
+            backdrop-filter: blur(8px);
+            animation: fadeIn 1.2s;
+        }
+        .section h2 {
+            font-size: 2rem;
+            color: #00ff99;
+            margin-bottom: 18px;
+            letter-spacing: 1px;
+        }
+        .section p, .section li {
+            color: #e0e0e0;
+            font-size: 1.1rem;
+        }
+        /* Projects */
+        .projects-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            justify-content: center;
+        }
+        .project-card {
+            background: rgba(40, 40, 60, 0.8);
+            border-radius: 12px;
+            box-shadow: 0 4px 16px #3b82f655;
+            border: 1.5px solid #3b82f6;
+            padding: 22px 18px;
+            width: 260px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: left;
+            animation: fadeIn 1.5s;
+        }
+        .project-card:hover {
+            transform: translateY(-8px) scale(1.04);
+            box-shadow: 0 8px 32px #00ff9955, 0 2px 8px #0008;
+        }
+        .project-card img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 8px #0004;
+        }
+        .project-card h3 {
+            color: #00ff99;
+            margin: 0 0 8px 0;
+            font-size: 1.2rem;
+        }
+        /* Contact */
+        .contact-btns {
+            margin-top: 18px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 22px;
+            margin: 8px 10px 0 0;
+            background: linear-gradient(90deg, #00ff99, #3b82f6 80%);
+            color: #232526;
+            font-weight: 600;
+            border: none;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            box-shadow: 0 2px 8px #00ff9955;
+            transition: background 0.2s, color 0.2s, transform 0.2s;
+        }
+        .btn:hover {
+            background: linear-gradient(90deg, #3b82f6, #00ff99 80%);
+            color: #fff;
+            transform: translateY(-2px) scale(1.04);
+        }
+        /* Typing effect */
+        #typed-text {
+            min-height: 32px;
+            font-size: 1.1rem;
+            color: #b3b3b3;
+            letter-spacing: 0.5px;
+            margin-bottom: 0;
+        }
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero {
+                flex-direction: column;
+                gap: 24px;
+                padding: 40px 0 20px 0;
+            }
+            .section {
+                padding: 24px 10px;
+            }
+            .project-card {
+                width: 90vw;
+                max-width: 320px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div>
+            <span class="logo">Aayush-Tech07</span>
+            <span class="subtitle">Managed by Bipin</span>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Bipin Xeetri</h1>
+            <h2>Manager of Aayush-Tech07</h2>
+            <p>
+                Software Developer, Game Engineer, System Administrator, and Web Developer.<br>
+                <span id="typed-text"></span>
+            </p>
+        </div>
+        <div class="hero-img">
+            <img src="kin.jpg" alt="Bipin Xeetri">
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>
+            Hi, I'm <b>Bipin Xeetri</b>, the manager of <b>Aayush-Tech07</b>. I specialize in building immersive digital experiences, from advanced game engines to robust web platforms. My passion is blending creativity with technology to deliver impactful solutions.
+        </p>
+    </section>
+
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+        <div class="projects-list">
+            <div class="project-card">
+                <img src="images.jpg" alt="Game Engine Project">
+                <h3>Game Engine Development</h3>
+                <p>Developed a custom game engine supporting 2D & 3D game development, optimized for performance and flexibility.</p>
+            </div>
+            <div class="project-card">
+                <img src="download (1).jpg" alt="VR Game Project">
+                <h3>Virtual Reality Game</h3>
+                <p>Created an immersive VR game for Oculus Rift, focusing on interactive gameplay and realistic environments.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Contact</h2>
+        <p>Let's connect! Reach out for collaborations, projects, or just to say hi.</p>
+        <div class="contact-btns">
+            <a href="mailto:bipinxeetri@example.com" class="btn">Email Me</a>
+            <a href="https://www.facebook.com/bipinxeetri" class="btn" target="_blank">Facebook</a>
+        </div>
+    </section>
+
+    <script>
+        // Typing effect
+        document.addEventListener('DOMContentLoaded', function() {
+            const text = "Passionate about building next-gen games and digital solutions. Let's create something amazing together!";
+            const typedTextElement = document.getElementById('typed-text');
+            let index = 0;
+            function typeWriter() {
+                if (index < text.length) {
+                    typedTextElement.innerHTML += text.charAt(index);
+                    index++;
+                    setTimeout(typeWriter, 40);
+                }
+            }
+            typeWriter();
+        });
+        // Hamburger menu
+        document.addEventListener("DOMContentLoaded", function () {
+            const hamburger = document.getElementById("hamburger");
+            const navLinks = document.getElementById("nav-links");
+            hamburger.addEventListener("click", function () {
+                navLinks.classList.toggle("active");
+            });
+        });
+    </script>
+</body>
+</html>
